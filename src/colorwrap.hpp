@@ -1,10 +1,10 @@
-#ifndef __COLORMAP_HPP__
-#define __COLORMAP_HPP__
+#ifndef __COLORWRAP_HPP__
+#define __COLORWRAP_HPP__
 
 #include <vector>
 
 
-class Colormap
+class Colorwrap
 {
     public:
         static std::vector<int> Spectral( std::size_t num_colors = 11 );
@@ -28,5 +28,7 @@ class Colormap
         static std::vector<double> linspace(double min, double max, size_t steps);
         static std::vector<double> interpolate_coord( const std::vector<double> &x, const std::vector<double> &y, const std::vector<double> &x_new );
 };
+
+using Colormap = Colorwrap;
 
 #endif

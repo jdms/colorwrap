@@ -1,0 +1,188 @@
+###############################################
+# Preliminaries  
+###############################################
+
+cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
+
+project(ColorWrap CXX)
+
+set(VERSION_MAJOR 0 CACHE STRING "Project major version number.")
+set(VERSION_MINOR 1 CACHE STRING "Project minor version number.")
+set(VERSION_PATCH 0 CACHE STRING "Project patch version number.")
+mark_as_advanced(VERSION_MAJOR VERSION_MINOR VERSION_PATCH)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+
+###############################################
+# Project options 
+###############################################
+
+# Set default build type (debug, release, etc.)
+
+set(COLORWRAP_BUILD_TYPE "Release" CACHE STRING
+    "Set build type to: Debug, Release, RelWithDebInfo, or MinSizeRel")
+set(CMAKE_BUILD_TYPE "${COLORWRAP_BUILD_TYPE}" CACHE INTERNAL "" FORCE)
+
+option(COLORWRAP_BUILD_SHARED         "Build a shared library instead of a static library"  ON)
+option(COLORWRAP_BUILD_DOCS           "Build documentation with Doxygen"                   OFF)
+
+# regarding testing, see also: https://cmake.org/Wiki/CMake/Testing_With_CTest
+
+
+
+###############################################
+# Auxiliary config files. 
+###############################################
+
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+
+# Must use GNUInstallDirs to install libraries into correct
+# locations on all platforms.
+
+include(GNUInstallDirs)
+
+# Modify installation path in cmake generation step by setting var: 
+# CMAKE_INSTALL_PREFIX
+
+###############################################
+# Configure lib (shared or static)
+###############################################
+
+if(COLORWRAP_BUILD_SHARED)
+    set(LIB_TYPE SHARED)
+
+else()
+    set(LIB_TYPE STATIC)
+
+endif()
+
+
+
+###############################################
+# Compiler flags (we support Clang (3.9+), 
+# Gcc (5.4+) and VS2013 (revision 5+)). 
+###############################################
+
+
+###############################################
+# Docs
+###############################################
+
+if (COLORWRAP_BUILD_DOCS)
+    include("${CMAKE_MODULE_PATH}/BuildDocumentation.cmake") 
+endif(COLORWRAP_BUILD_DOCS)
+
+
+
+###############################################
+# External libraries
+###############################################
+
+#
+#  Eigen is mainly used as a wrapper for Lapack. 
+#
+
+if(COLORWRAP_EIGEN3_INCLUDE_DIR)
+    message(STATUS "Using eigen3 include dir: ${COLORWRAP_EIGEN3_INCLUDE_DIR}")
+    include_directories(SYSTEM ${COLORWRAP_EIGEN3_INCLUDE_DIR})
+
+else()
+    find_package(Eigen3) 
+
+    if(Eigen3_FOUND)
+        set(GLOBAL_EIGEN3_INSTALL true CACHE BOOL "")
+    endif()
+
+    if(GLOBAL_EIGEN3_INSTALL) 
+        include_directories(SYSTEM ${EIGEN3_INCLUDE_DIR})
+
+    else()
+        set(EIGEN3_SOURCE ${CMAKE_SOURCE_DIR}/src/eigen3)
+
+        ExternalProject_Add(
+            Eigen3
+            GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror
+            SOURCE_DIR ${EIGEN3_SOURCE}
+            STEP_TARGETS build
+            CONFIGURE_COMMAND ""
+            BUILD_COMMAND ""
+            INSTALL_COMMAND ""
+            EXCLUDE_FROM_ALL TRUE
+            )
+
+        include_directories(SYSTEM ${EIGEN3_SOURCE})
+        set(LOCAL_EIGEN3_INSTALL true CACHE BOOL "")
+
+    endif() 
+endif()
+
+
+###############################################
+# Main library
+###############################################
+
+# include_directories(${CMAKE_SOURCE_DIR}/detail)
+
+set(HEADERS 
+    src/colorwrap.hpp
+    )
+
+set(COLORWRAP_DETAIL_HEADERS
+    src/detail/nspline.h
+    src/detail/cbrewer.h
+    )
+
+set(COLORWRAP_DETAIL_SOURCES 
+    src/detail/colorwrap.cpp
+    ) 
+
+
+add_library(colorwrap ${LIB_TYPE} ${COLORWRAP_DETAIL_SOURCES} ${HEADERS})  
+
+target_include_directories(colorwrap
+    PUBLIC
+        $<INSTALL_INTERFACE:include>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/detail
+)
+
+target_compile_features(colorwrap PRIVATE cxx_std_11)
+
+if(LOCAL_EIGEN3_INSTALL)
+    add_dependencies(colorwrap Eigen3-build)
+endif()
+
+set(INSTALL_DESTINATION ${CMAKE_SOURCE_DIR}/colorwrap)
+
+install(TARGETS colorwrap 
+    EXPORT colorwrap-export
+    LIBRARY DESTINATION ${INSTALL_DESTINATION}/lib 
+    #LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${INSTALL_DESTINATION}/lib 
+    #ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${INSTALL_DESTINATION}/lib
+    #RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    COMPONENT library # what is this COMPONENT reserved word for? 
+)
+
+install(FILES ${HEADERS}
+    DESTINATION ${INSTALL_DESTINATION}/include 
+    #DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+
+install(EXPORT colorwrap-export 
+    FILE colorwrap-targets.cmake
+    # NAMESPACE ColorWrap::
+    DESTINATION ${INSTALL_DESTINATION}/lib/cmake/colorwrap 
+    #DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/colorwrap
+)
+
+export(TARGETS colorwrap FILE colorwrap.cmake)
+
+###############################################
+# Executables and utilities 
+###############################################
+
+# empty

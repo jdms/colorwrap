@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <cmath>
 
-#include "../colormap.hpp"
+#include "../colorwrap.hpp"
 
 #include "colorbrewer.h" 
 #include "nspline.h"
@@ -13,7 +13,7 @@
 ///////////////////////////////////////////////////////////
 
 
-std::vector<int> Colormap::Spectral(std::size_t num_colors)
+std::vector<int> Colorwrap::Spectral(std::size_t num_colors)
 {
     size_t spectral_min_colors = 3;
     size_t spectral_max_colors = 11;
@@ -22,7 +22,7 @@ std::vector<int> Colormap::Spectral(std::size_t num_colors)
     return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
 }
 
-std::vector<int> Colormap::RdTYlGn( std::size_t num_colors = 11 );
+std::vector<int> Colorwrap::RdTYlGn( std::size_t num_colors)
 {
     size_t spectral_min_colors = 3;
     size_t spectral_max_colors = 11;
@@ -31,7 +31,7 @@ std::vector<int> Colormap::RdTYlGn( std::size_t num_colors = 11 );
     return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
 }
 
-std::vector<int> Colormap::Accent( std::size_t num_colors = 8 );
+std::vector<int> Colorwrap::Accent( std::size_t num_colors)
 {
     size_t spectral_min_colors = 3;
     size_t spectral_max_colors = 8;
@@ -40,7 +40,7 @@ std::vector<int> Colormap::Accent( std::size_t num_colors = 8 );
     return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
 }
 
-std::vector<int> Colormap::Dark2( std::size_t num_colors = 8 );
+std::vector<int> Colorwrap::Dark2( std::size_t num_colors)
 {
     size_t spectral_min_colors = 3;
     size_t spectral_max_colors = 8;
@@ -49,7 +49,7 @@ std::vector<int> Colormap::Dark2( std::size_t num_colors = 8 );
     return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
 }
 
-std::vector<int> Colormap::Paired( std::size_t num_colors = 12 );
+std::vector<int> Colorwrap::Paired( std::size_t num_colors)
 {
     size_t spectral_min_colors = 3;
     size_t spectral_max_colors = 12;
@@ -58,7 +58,7 @@ std::vector<int> Colormap::Paired( std::size_t num_colors = 12 );
     return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
 }
 
-std::vector<int> Colormap::Pastel1( std::size_t num_colors = 9 );
+std::vector<int> Colorwrap::Pastel1( std::size_t num_colors)
 {
     size_t spectral_min_colors = 3;
     size_t spectral_max_colors = 9;
@@ -67,7 +67,7 @@ std::vector<int> Colormap::Pastel1( std::size_t num_colors = 9 );
     return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
 }
 
-std::vector<int> Colormap::Pastel2( std::size_t num_colors = 8 );
+std::vector<int> Colorwrap::Pastel2( std::size_t num_colors)
 {
     size_t spectral_min_colors = 3;
     size_t spectral_max_colors = 8;
@@ -76,7 +76,7 @@ std::vector<int> Colormap::Pastel2( std::size_t num_colors = 8 );
     return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
 }
 
-std::vector<int> Colormap::Set1( std::size_t num_colors = 9 );
+std::vector<int> Colorwrap::Set1( std::size_t num_colors)
 {
     size_t spectral_min_colors = 3;
     size_t spectral_max_colors = 9;
@@ -85,7 +85,7 @@ std::vector<int> Colormap::Set1( std::size_t num_colors = 9 );
     return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
 }
 
-std::vector<int> Colormap::Set2( std::size_t num_colors = 8 );
+std::vector<int> Colorwrap::Set2( std::size_t num_colors)
 {
     size_t spectral_min_colors = 3;
     size_t spectral_max_colors = 8;
@@ -94,7 +94,7 @@ std::vector<int> Colormap::Set2( std::size_t num_colors = 8 );
     return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
 }
 
-std::vector<int> Colormap::Set3( std::size_t num_colors = 12 );
+std::vector<int> Colorwrap::Set3( std::size_t num_colors)
 {
     size_t spectral_min_colors = 3;
     size_t spectral_max_colors = 12;
@@ -110,7 +110,7 @@ std::vector<int> Colormap::Set3( std::size_t num_colors = 12 );
 ///////////////////////////////////////////////////////////
 
 
-std::vector<int> Colormap::get_cbrewer( std::string cmap_name, std::size_t min_colors, std::size_t max_colors, std::size_t num_colors )
+std::vector<int> Colorwrap::get_cbrewer( std::string cmap_name, std::size_t min_colors, std::size_t max_colors, std::size_t num_colors )
 {
             //
             // Get base colors
@@ -141,7 +141,7 @@ std::vector<int> Colormap::get_cbrewer( std::string cmap_name, std::size_t min_c
             return interpolate_color_list(colors, num_colors);
 }
 
-std::vector<int> Colormap::interpolate_color_list( const std::vector<std::string> &colors, size_t num_colors )
+std::vector<int> Colorwrap::interpolate_color_list( const std::vector<std::string> &colors, size_t num_colors )
 {
             std::vector<int> out_colors;
 
@@ -185,11 +185,11 @@ std::vector<int> Colormap::interpolate_color_list( const std::vector<std::string
             }
 
             std::vector<double> rc_new, gc_new, bc_new, t_new;
-            t_new = Colormap::linspace(0.0, 1.0, num_colors);
+            t_new = Colorwrap::linspace(0.0, 1.0, num_colors);
 
-            rc_new = Colormap::interpolate_coord(t, rc, t_new);
-            gc_new = Colormap::interpolate_coord(t, gc, t_new);
-            bc_new = Colormap::interpolate_coord(t, bc, t_new);
+            rc_new = Colorwrap::interpolate_coord(t, rc, t_new);
+            gc_new = Colorwrap::interpolate_coord(t, gc, t_new);
+            bc_new = Colorwrap::interpolate_coord(t, bc, t_new);
 
             /* std::cout << "num_colors > 11\n"; */
             for ( size_t i = 0; i < num_colors; ++i )
@@ -211,7 +211,7 @@ std::vector<int> Colormap::interpolate_color_list( const std::vector<std::string
             return out_colors;
 }
 
-std::vector<double> Colormap::linspace(double min, double max, size_t steps)
+std::vector<double> Colorwrap::linspace(double min, double max, size_t steps)
 {
             std::vector<double> out;
             out.push_back(min);
@@ -233,7 +233,7 @@ std::vector<double> Colormap::linspace(double min, double max, size_t steps)
             return out;
 }
 
-std::vector<double> Colormap::interpolate_coord( const std::vector<double> &x, const std::vector<double> &y, const std::vector<double> &x_new )
+std::vector<double> Colorwrap::interpolate_coord( const std::vector<double> &x, const std::vector<double> &y, const std::vector<double> &x_new )
 {
             std::vector<double> y_new( x_new.size() ); 
 
@@ -249,7 +249,7 @@ std::vector<double> Colormap::interpolate_coord( const std::vector<double> &x, c
             return y_new;
 }
 
-void Colormap::getRGB( std::string hex_code, int &r, int &g, int &b )
+void Colorwrap::getRGB( std::string hex_code, int &r, int &g, int &b )
 {
             hex_code.erase(0,1);
 
