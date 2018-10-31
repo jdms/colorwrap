@@ -170,10 +170,11 @@ target_compile_features(colorwrap PRIVATE cxx_std_11)
 
 # MSVC (as recently as version 19.15.26729) throws hundreds of warnings from
 # it's own implementation of the STL -- CMake's SYSTEM directive seems
-# ineffective to prevent this behavior.  Using -Wall in MSVC is, unfortunately,
-# not possible.  
-if(NOT MSVC)
-    target_compile_options(colorwrap PRIVATE -Wall)
+# ineffective to prevent this behaviour.  Thus, using -Wall in MSVC is,
+# unfortunately, not possible.  
+
+if(NOT MSVC) 
+    target_compile_options(colorwrap PRIVATE -Wall) 
 endif()
 
 if(LOCAL_EIGEN3_INSTALL)
