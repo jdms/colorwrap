@@ -39,8 +39,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 #     "Set build type to: Debug, Release, RelWithDebInfo, or MinSizeRel")
 # set(CMAKE_BUILD_TYPE "${COLORWRAP_BUILD_TYPE}" CACHE INTERNAL "" FORCE)
 
-option(COLORWRAP_BUILD_SHARED         "Build a shared library instead of a static library"  ON)
+option(COLORWRAP_BUILD_SHARED         "Build a shared library instead of a static library" ON)
 option(COLORWRAP_BUILD_DOCS           "Build documentation with Doxygen"                   OFF)
+option(COLORWRAP_BUILD_TESTS          "Build a test binary"                                OFF)
 
 # regarding testing, see also: https://cmake.org/Wiki/CMake/Testing_With_CTest
 
@@ -114,6 +115,7 @@ else()
 
     else()
         set(EIGEN3_SOURCE ${CMAKE_SOURCE_DIR}/src/eigen3)
+        include(ExternalProject)
 
         ExternalProject_Add(
             Eigen3
@@ -165,10 +167,21 @@ target_include_directories(colorwrap
 )
 
 target_compile_features(colorwrap PRIVATE cxx_std_11)
-target_compile_options(colorwrap PRIVATE -Wall)
+
+# MSVC (as recently as version 19.15.26729) throws hundreds of warnings from
+# it's own implementation of the STL -- CMake's SYSTEM directive seems
+# ineffective to prevent this behavior.  Using -Wall in MSVC is, unfortunately,
+# not possible.  
+if(NOT MSVC)
+    target_compile_options(colorwrap PRIVATE -Wall)
+endif()
 
 if(LOCAL_EIGEN3_INSTALL)
     add_dependencies(colorwrap Eigen3-build)
+endif()
+
+if(COLORWRAP_BUILD_SHARED)
+    target_compile_options(colorwrap PUBLIC -DCOLORWRAP_BUILD_SHARED)
 endif()
 
 #set(INSTALL_DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/colorwrap)
@@ -202,4 +215,7 @@ export(TARGETS colorwrap FILE colorwrap.cmake)
 # Executables and utilities 
 ###############################################
 
-# empty
+if(COLORWRAP_BUILD_TESTS)
+    add_executable(main src/main.cpp)
+    target_link_libraries(main colorwrap)
+endif()

@@ -222,7 +222,7 @@ class NSpline {
 
         MatrixXd buildA() {
             
-            int m = _C.size();
+            int m = static_cast<int>(_C.size());
             assert ( m > 0 );
             MatrixXd A(m,m);
 
@@ -243,7 +243,7 @@ class NSpline {
 
         MatrixXd buildP() {
 
-            int m = _C.size();
+            int m = static_cast<int>(_C.size());
             assert( m > 0 );
             MatrixXd P(m, 2);
 

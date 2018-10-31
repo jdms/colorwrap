@@ -17,8 +17,8 @@
 #define __COLORWRAP_WIN_DLL_EXPORT_HANDLER_HPP__
 
 
-#if defined(_WIN32) || defined(_WIN64)
-// #if defined(_WIN64)
+// #if defined(_WIN32) || defined(_WIN64)
+#if defined(_WIN32) && defined(COLORWRAP_BUILD_SHARED)
 
     #if defined(_MSC_VER)
         /* Avoids warning C4251 in VS2013 : 
@@ -26,10 +26,10 @@
          *     https://msdn.microsoft.com/en-us/library/esew7y1w.aspx
          *     https://msdn.microsoft.com/en-us/library/2c8f766e.aspx
          */
-        #define SILENCE_MSVC_WIN_DLL_EXPORT_WARNING __pragma( warning(disable : 4251) )
+        #define COLORWRAP_SILENCE_MSVC_WIN_DLL_EXPORT_WARNING __pragma( warning(disable : 4251) )
 
     #else
-        #define SILENCE_MSVC_WIN_DLL_EXPORT_WARNING 
+        #define COLORWRAP_SILENCE_MSVC_WIN_DLL_EXPORT_WARNING 
 
     #endif
     // 
@@ -60,7 +60,7 @@
     #endif
 
 #else // #if defined(_WIN32) || defined(_WIN64)  
-    #define SILENCE_MSVC_WIN_DLL_EXPORT_WARNING 
+    #define COLORWRAP_SILENCE_MSVC_WIN_DLL_EXPORT_WARNING 
 
     #define COLORWRAPLIB_DLL_HANDLER
 
