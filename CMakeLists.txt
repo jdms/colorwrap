@@ -17,7 +17,7 @@
 # Preliminaries  
 ###############################################
 
-cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.8.2 FATAL_ERROR)
 
 project(ColorWrap CXX)
 
@@ -165,6 +165,7 @@ target_include_directories(colorwrap
 )
 
 target_compile_features(colorwrap PRIVATE cxx_std_11)
+target_compile_options(colorwrap PRIVATE -Wall -Wextra -Wpedantic)
 
 if(LOCAL_EIGEN3_INSTALL)
     add_dependencies(colorwrap Eigen3-build)
