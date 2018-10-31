@@ -266,6 +266,12 @@ std::vector<double> Colorwrap::interpolate_coord( const std::vector<double> &x, 
 
 void Colorwrap::getRGB( std::string hex_code, int &r, int &g, int &b )
 {
+            if ( hex_code.size() < 7 )
+            {
+                r = 0; g = 0; b = 0;
+                return;
+            }
+
             hex_code.erase(0,1);
 
             #ifdef _WIN32

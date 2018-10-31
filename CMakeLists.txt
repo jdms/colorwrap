@@ -154,7 +154,7 @@ set(COLORWRAP_DETAIL_SOURCES
 ) 
 
 
-add_library(colorwrap ${LIB_TYPE} ${COLORWRAP_DETAIL_SOURCES} ${HEADERS})  
+add_library(colorwrap ${LIB_TYPE} ${COLORWRAP_DETAIL_SOURCES})  
 
 target_include_directories(colorwrap
     PUBLIC
@@ -165,35 +165,35 @@ target_include_directories(colorwrap
 )
 
 target_compile_features(colorwrap PRIVATE cxx_std_11)
-target_compile_options(colorwrap PRIVATE -Wall -Wextra -Wpedantic)
+target_compile_options(colorwrap PRIVATE -Wall)
 
 if(LOCAL_EIGEN3_INSTALL)
     add_dependencies(colorwrap Eigen3-build)
 endif()
 
-set(INSTALL_DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/colorwrap)
+#set(INSTALL_DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/colorwrap)
 
 install(TARGETS colorwrap 
     EXPORT colorwrap-export
-    LIBRARY DESTINATION ${INSTALL_DESTINATION}/lib 
-    #LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    ARCHIVE DESTINATION ${INSTALL_DESTINATION}/lib 
-    #ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${INSTALL_DESTINATION}/lib
-    #RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    #LIBRARY DESTINATION ${INSTALL_DESTINATION}/lib 
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    #ARCHIVE DESTINATION ${INSTALL_DESTINATION}/lib 
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    #RUNTIME DESTINATION ${INSTALL_DESTINATION}/lib
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     COMPONENT library # what is this COMPONENT reserved word for? 
 )
 
 install(FILES ${HEADERS}
-    DESTINATION ${INSTALL_DESTINATION}/include 
-    #DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    #DESTINATION ${INSTALL_DESTINATION}/include 
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
 install(EXPORT colorwrap-export 
     FILE colorwrap-targets.cmake
     # NAMESPACE ColorWrap::
-    DESTINATION ${INSTALL_DESTINATION}/lib/cmake/colorwrap 
-    #DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/colorwrap
+    #DESTINATION ${INSTALL_DESTINATION}/lib/cmake/colorwrap 
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/colorwrap
 )
 
 export(TARGETS colorwrap FILE colorwrap.cmake)
