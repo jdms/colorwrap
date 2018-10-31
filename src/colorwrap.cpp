@@ -28,94 +28,344 @@
 ///////////////////////////////////////////////////////////
 
 
-std::vector<int> Colorwrap::Spectral(std::size_t num_colors)
+std::vector<int> Colorwrap::YlGn( std::size_t num_colors )
 {
-    size_t spectral_min_colors = 3;
-    size_t spectral_max_colors = 11;
-    std::string cmap_name = "Spectral";
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "YlGn";
 
-    return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
 }
 
-std::vector<int> Colorwrap::RdTYlGn( std::size_t num_colors)
+
+std::vector<int> Colorwrap::YlGnBu( std::size_t num_colors )
 {
-    size_t spectral_min_colors = 3;
-    size_t spectral_max_colors = 11;
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "YlGnBu";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::GnBu( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "GnBu";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::BuGn( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "BuGn";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::PuBuGn( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 11;
+    std::string cmap_name = "PuBuGn";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::PuBu( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "PuBu";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::BuPu( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "BuPu";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::RdPu( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "RdPu";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::PuRd( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "PuRd";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::OrRd( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "OrRd";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::YlOrRd( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "YlOrRd";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::YlOrBr( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "YlOrBr";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::Purples( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "Purples";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::Blues( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "Blues";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::Greens( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "Greens";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::Oranges( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "Oranges";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::Reds( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "Reds";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::Greys( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 9;
+    std::string cmap_name = "Greys";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::PuOr( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 11;
+    std::string cmap_name = "PuOr";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::BrBG( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 11;
+    std::string cmap_name = "BrBG";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::PRGn( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 11;
+    std::string cmap_name = "PRGn";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::PiYG( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 11;
+    std::string cmap_name = "PiYG";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::RdBu( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 11;
+    std::string cmap_name = "RdBu";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::RdGy( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 11;
+    std::string cmap_name = "RdGy";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::RdYlBu( std::size_t num_colors )
+{
+    size_t min_colours = 3;
+    size_t max_colours = 11;
+    std::string cmap_name = "RdYlBu";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+
+std::vector<int> Colorwrap::Spectral(std::size_t num_colors)
+{
+    size_t min_colours = 3;
+    size_t max_colours = 11;
+    std::string cmap_name = "Spectral";
+
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
+}
+
+std::vector<int> Colorwrap::RdYlGn( std::size_t num_colors)
+{
+    size_t min_colours = 3;
+    size_t max_colours = 11;
     std::string cmap_name = "RdYlGn";
 
-    return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
 }
 
 std::vector<int> Colorwrap::Accent( std::size_t num_colors)
 {
-    size_t spectral_min_colors = 3;
-    size_t spectral_max_colors = 8;
+    size_t min_colours = 3;
+    size_t max_colours = 8;
     std::string cmap_name = "Accent";
 
-    return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
 }
 
 std::vector<int> Colorwrap::Dark2( std::size_t num_colors)
 {
-    size_t spectral_min_colors = 3;
-    size_t spectral_max_colors = 8;
+    size_t min_colours = 3;
+    size_t max_colours = 8;
     std::string cmap_name = "Dark2";
 
-    return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
 }
 
 std::vector<int> Colorwrap::Paired( std::size_t num_colors)
 {
-    size_t spectral_min_colors = 3;
-    size_t spectral_max_colors = 12;
+    size_t min_colours = 3;
+    size_t max_colours = 12;
     std::string cmap_name = "Paired";
 
-    return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
 }
 
 std::vector<int> Colorwrap::Pastel1( std::size_t num_colors)
 {
-    size_t spectral_min_colors = 3;
-    size_t spectral_max_colors = 9;
+    size_t min_colours = 3;
+    size_t max_colours = 9;
     std::string cmap_name = "Pastel1";
 
-    return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
 }
 
 std::vector<int> Colorwrap::Pastel2( std::size_t num_colors)
 {
-    size_t spectral_min_colors = 3;
-    size_t spectral_max_colors = 8;
+    size_t min_colours = 3;
+    size_t max_colours = 8;
     std::string cmap_name = "Pastel2";
 
-    return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
 }
 
 std::vector<int> Colorwrap::Set1( std::size_t num_colors)
 {
-    size_t spectral_min_colors = 3;
-    size_t spectral_max_colors = 9;
+    size_t min_colours = 3;
+    size_t max_colours = 9;
     std::string cmap_name = "Set1";
 
-    return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
 }
 
 std::vector<int> Colorwrap::Set2( std::size_t num_colors)
 {
-    size_t spectral_min_colors = 3;
-    size_t spectral_max_colors = 8;
+    size_t min_colours = 3;
+    size_t max_colours = 8;
     std::string cmap_name = "Set2";
 
-    return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
 }
 
 std::vector<int> Colorwrap::Set3( std::size_t num_colors)
 {
-    size_t spectral_min_colors = 3;
-    size_t spectral_max_colors = 12;
+    size_t min_colours = 3;
+    size_t max_colours = 12;
     std::string cmap_name = "Set3";
 
-    return get_cbrewer(cmap_name, spectral_min_colors, spectral_max_colors, num_colors);
+    return get_cbrewer(cmap_name, min_colours, max_colours, num_colors);
 }
 
 
