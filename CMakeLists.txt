@@ -142,28 +142,28 @@ endif()
 # include_directories(${CMAKE_SOURCE_DIR}/detail)
 
 set(HEADERS 
-    src/colorwrap.hpp
-    src/colorwrap_win_dll_export_handler.hpp
+    include/colorwrap.hpp
+    include/colorwrap_win_dll_export_handler.hpp
 )
 
 set(COLORWRAP_DETAIL_HEADERS
-    src/detail/nspline.h
-    src/detail/cbrewer.h
+    src/nspline.h
+    src/cbrewer.h
 )
 
-set(COLORWRAP_DETAIL_SOURCES 
-    src/detail/colorwrap.cpp
+set(COLORWRAP_SOURCES 
+    src/colorwrap.cpp
 ) 
 
 
-add_library(colorwrap ${LIB_TYPE} ${COLORWRAP_DETAIL_SOURCES})  
+add_library(colorwrap ${LIB_TYPE} ${COLORWRAP_SOURCES})  
 
 target_include_directories(colorwrap
     PUBLIC
         $<INSTALL_INTERFACE:include>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/detail
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 target_compile_features(colorwrap PRIVATE cxx_std_11)

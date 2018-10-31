@@ -19,6 +19,18 @@
 /* #include <cmath> // just because of the function 'pow' */ 
 #include <vector>
 
+/* MSVC is unable to honour the SYSTEM directive in CMake, thus creating a
+ * stream of warnings steaming from Eigen.  The following pragma(s) is (are)
+ * used to prevent such behaviour.  */
+
+/* Prevent warnings of type: */ 
+/*     >> 'conversion' conversion from 'type1' to 'type2', possible loss of data
+ *     */
+#if defined(_WIN32)
+    #pragma warning( push )
+    #pragma warning( disable : 4244 ) //__pragma( warning(disable : 4244) ) 
+#endif
+
 #include <Eigen/Dense>
 
 
@@ -112,7 +124,7 @@ class NSpline {
             T.block( 0, m, m, 2 ) = P;
             T.block( m, 0, 2, m ) = P.transpose();
             T.block( m, m, 2, 2 ) = MatrixXd::Constant( 2, 2, 0 );
-
+            
             VectorXd y = T.fullPivHouseholderQr().solve( _F );
             _alpha = y.block( 0, 0, m, 1 );
             _beta = y.block( m, 0, 2, 1 );
@@ -258,5 +270,8 @@ class NSpline {
         EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 };
 
-#endif
+#if defined(_WIN32)
+    #pragma warning( pop )
+#endif 
 
+#endif
