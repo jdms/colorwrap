@@ -20,9 +20,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Set default build type (debug, release, etc.)
 
-set(COLORWRAP_BUILD_TYPE "Release" CACHE STRING
-    "Set build type to: Debug, Release, RelWithDebInfo, or MinSizeRel")
-set(CMAKE_BUILD_TYPE "${COLORWRAP_BUILD_TYPE}" CACHE INTERNAL "" FORCE)
+# set(COLORWRAP_BUILD_TYPE "Release" CACHE STRING
+#     "Set build type to: Debug, Release, RelWithDebInfo, or MinSizeRel")
+# set(CMAKE_BUILD_TYPE "${COLORWRAP_BUILD_TYPE}" CACHE INTERNAL "" FORCE)
 
 option(COLORWRAP_BUILD_SHARED         "Build a shared library instead of a static library"  ON)
 option(COLORWRAP_BUILD_DOCS           "Build documentation with Doxygen"                   OFF)
@@ -126,16 +126,17 @@ endif()
 
 set(HEADERS 
     src/colorwrap.hpp
-    )
+    src/colorwrap_win_dll_export_handler.hpp
+)
 
 set(COLORWRAP_DETAIL_HEADERS
     src/detail/nspline.h
     src/detail/cbrewer.h
-    )
+)
 
 set(COLORWRAP_DETAIL_SOURCES 
     src/detail/colorwrap.cpp
-    ) 
+) 
 
 
 add_library(colorwrap ${LIB_TYPE} ${COLORWRAP_DETAIL_SOURCES} ${HEADERS})  
@@ -154,7 +155,7 @@ if(LOCAL_EIGEN3_INSTALL)
     add_dependencies(colorwrap Eigen3-build)
 endif()
 
-set(INSTALL_DESTINATION ${CMAKE_SOURCE_DIR}/colorwrap)
+set(INSTALL_DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/colorwrap)
 
 install(TARGETS colorwrap 
     EXPORT colorwrap-export

@@ -3,8 +3,10 @@
 
 #include <vector>
 
+#include "colorwrap_win_dll_export_handler.hpp"
 
-class Colorwrap
+
+class COLORWRAPLIB_DLL_HANDLER Colorwrap
 {
     public:
         static std::vector<int> Spectral( std::size_t num_colors = 11 );

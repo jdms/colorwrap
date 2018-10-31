@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <cmath>
 
-#include "../colorwrap.hpp"
+#include "colorwrap.hpp"
 
 #include "colorbrewer.h" 
 #include "nspline.h"
