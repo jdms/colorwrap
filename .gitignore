@@ -4,9 +4,6 @@
 
 src/eigen3/
 *build/
-colorwrap/
-lib/
-include/
 doc/html
 
 
