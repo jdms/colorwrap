@@ -165,7 +165,7 @@ target_include_directories(colorwrap
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_compile_features(colorwrap PRIVATE cxx_std_11)
+target_compile_features(colorwrap PUBLIC cxx_std_11)
 
 # MSVC (as recently as version 19.15.26729) throws hundreds of warnings from
 # it's own implementation of the STL -- CMake's SYSTEM directive seems
