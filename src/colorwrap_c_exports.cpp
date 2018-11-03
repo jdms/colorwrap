@@ -22,7 +22,7 @@
     // Sequential colormaps
     ///////////////////////////////////////////////////////////////
 
-int Blues   ( int num_colors, int colormap[] )
+int colorwrap_Blues   ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
