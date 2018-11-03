@@ -18,7 +18,7 @@
 
 #include <vector>
 
-#include "colorwrap_win_dll_export_handler.hpp"
+#include "colorwrap_win_dll_export_handler.h"
 
 
 class COLORWRAPLIB_DLL_HANDLER Colorwrap

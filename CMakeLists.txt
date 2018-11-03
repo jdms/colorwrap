@@ -139,22 +139,21 @@ endif()
 # Main library
 ###############################################
 
-# include_directories(${CMAKE_SOURCE_DIR}/detail)
-
 set(HEADERS 
+    include/colorwrap_c.h
     include/colorwrap.hpp
-    include/colorwrap_win_dll_export_handler.hpp
-)
+    include/colorwrap_win_dll_export_handler.h
+    )
 
 set(COLORWRAP_DETAIL_HEADERS
     src/nspline.h
     src/cbrewer.h
-)
+    )
 
 set(COLORWRAP_SOURCES 
+    src/colorwrap_c_exports.cpp
     src/colorwrap.cpp
-) 
-
+    ) 
 
 add_library(colorwrap ${LIB_TYPE} ${COLORWRAP_SOURCES})  
 
