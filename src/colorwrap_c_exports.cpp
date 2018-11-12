@@ -22,235 +22,325 @@
     // Sequential colormaps
     ///////////////////////////////////////////////////////////////
 
-int colorwrap_Blues   ( int num_colors, int colormap[] )
+int colorwrapBlues   ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Blues( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Blues( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_BuGn    ( int num_colors, int colormap[] )
+int colorwrapBuGn    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::BuGn( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::BuGn( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_BuPu    ( int num_colors, int colormap[] )
+int colorwrapBuPu    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::BuPu( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::BuPu( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_GnBu    ( int num_colors, int colormap[] )
+int colorwrapGnBu    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::GnBu( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::GnBu( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Greens  ( int num_colors, int colormap[] )
+int colorwrapGreens  ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Greens( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Greens( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Greys   ( int num_colors, int colormap[] )
+int colorwrapGreys   ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Greys( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Greys( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Oranges ( int num_colors, int colormap[] )
+int colorwrapOranges ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Oranges( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Oranges( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_OrRd    ( int num_colors, int colormap[] )
+int colorwrapOrRd    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::OrRd( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::OrRd( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_PuBu    ( int num_colors, int colormap[] )
+int colorwrapPuBu    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::PuBu( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::PuBu( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_PuBuGn  ( int num_colors, int colormap[] )
+int colorwrapPuBuGn  ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::PuBuGn( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::PuBuGn( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_PuRd    ( int num_colors, int colormap[] )
+int colorwrapPuRd    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::PuRd( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::PuRd( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Purples ( int num_colors, int colormap[] )
+int colorwrapPurples ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Purples( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Purples( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_RdPu    ( int num_colors, int colormap[] )
+int colorwrapRdPu    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::RdPu( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::RdPu( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Reds    ( int num_colors, int colormap[] )
+int colorwrapReds    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Reds( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Reds( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_YlGn    ( int num_colors, int colormap[] )
+int colorwrapYlGn    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::YlGn( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::YlGn( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_YlGnBu  ( int num_colors, int colormap[] )
+int colorwrapYlGnBu  ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::YlGnBu( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::YlGnBu( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_YlOrBr  ( int num_colors, int colormap[] )
+int colorwrapYlOrBr  ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::YlOrBr( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::YlOrBr( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_YlOrRd  ( int num_colors, int colormap[] )
+int colorwrapYlOrRd  ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::YlOrRd( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::YlOrRd( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
@@ -262,118 +352,163 @@ int colorwrap_YlOrRd  ( int num_colors, int colormap[] )
     // Diverging colormaps
     ///////////////////////////////////////////////////////////////
 
-int colorwrap_BrBG    ( int num_colors, int colormap[] )
+int colorwrapBrBG    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::BrBG( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::BrBG( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_PiYG    ( int num_colors, int colormap[] )
+int colorwrapPiYG    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::PiYG( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::PiYG( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_PRGn    ( int num_colors, int colormap[] )
+int colorwrapPRGn    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::PRGn( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::PRGn( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_PuOr    ( int num_colors, int colormap[] )
+int colorwrapPuOr    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::PuOr( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::PuOr( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_RdBu    ( int num_colors, int colormap[] )
+int colorwrapRdBu    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::RdBu( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::RdBu( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_RdGy    ( int num_colors, int colormap[] )
+int colorwrapRdGy    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::RdGy( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::RdGy( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_RdYlBu  ( int num_colors, int colormap[] )
+int colorwrapRdYlBu  ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::RdYlBu( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::RdYlBu( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_RdYlGn  ( int num_colors, int colormap[] )
+int colorwrapRdYlGn  ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::RdYlGn( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::RdYlGn( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Spectral( int num_colors, int colormap[] )
+int colorwrapSpectral( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Spectral( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Spectral( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
@@ -385,105 +520,145 @@ int colorwrap_Spectral( int num_colors, int colormap[] )
     // Qualitative colormaps
     ///////////////////////////////////////////////////////////////
 
-int colorwrap_Accent  ( int num_colors, int colormap[] )
+int colorwrapAccent  ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Accent( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Accent( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Dark2   ( int num_colors, int colormap[] )
+int colorwrapDark2   ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Dark2( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Dark2( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Paired  ( int num_colors, int colormap[] )
+int colorwrapPaired  ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Paired( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Paired( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Pastel1 ( int num_colors, int colormap[] )
+int colorwrapPastel1 ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Pastel1( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Pastel1( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Pastel2 ( int num_colors, int colormap[] )
+int colorwrapPastel2 ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Pastel2( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Pastel2( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Set1    ( int num_colors, int colormap[] )
+int colorwrapSet1    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Set1( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Set1( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Set2    ( int num_colors, int colormap[] )
+int colorwrapSet2    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Set2( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Set2( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());
 }
 
-int colorwrap_Set3    ( int num_colors, int colormap[] )
+int colorwrapSet3    ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )
     {
         return 0;
     }
 
-    auto colors = Colorwrap::Set3( static_cast<std::size_t>( num_colors > 0 ? num_colors : 1 ) );
+    if ( colormap == nullptr )
+    {
+        return 0;
+    }
+
+    auto colors = Colorwrap::Set3( static_cast<std::size_t>(num_colors) );
     memcpy(colormap, colors.data(), colors.size());
 
     return static_cast<int>(colors.size());

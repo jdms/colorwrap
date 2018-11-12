@@ -30,53 +30,53 @@ extern "C"
     // Sequential colormaps
     ///////////////////////////////////////////////////////////////
 
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Blues   ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_BuGn    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_BuPu    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_GnBu    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Greens  ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Greys   ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Oranges ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_OrRd    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_PuBu    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_PuBuGn  ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_PuRd    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Purples ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_RdPu    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Reds    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_YlGn    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_YlGnBu  ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_YlOrBr  ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_YlOrRd  ( int, int [] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapBlues   ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapBuGn    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapBuPu    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapGnBu    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapGreens  ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapGreys   ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapOranges ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapOrRd    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapPuBu    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapPuBuGn  ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapPuRd    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapPurples ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapRdPu    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapReds    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapYlGn    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapYlGnBu  ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapYlOrBr  ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapYlOrRd  ( int num_colors, int rgb_colormap[] );
 
 
     ///////////////////////////////////////////////////////////////
     // Diverging colormaps
     ///////////////////////////////////////////////////////////////
 
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_BrBG    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_PiYG    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_PRGn    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_PuOr    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_RdBu    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_RdGy    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_RdYlBu  ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_RdYlGn  ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Spectral( int, int [] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapBrBG    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapPiYG    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapPRGn    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapPuOr    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapRdBu    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapRdGy    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapRdYlBu  ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapRdYlGn  ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapSpectral( int num_colors, int rgb_colormap[] );
 
 
     ///////////////////////////////////////////////////////////////
     // Qualitative colormaps
     ///////////////////////////////////////////////////////////////
 
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Accent  ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Dark2   ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Paired  ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Pastel1 ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Pastel2 ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Set1    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Set2    ( int, int [] );
-    COLORWRAPLIB_DLL_HANDLER int colorwrap_Set3    ( int, int [] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapAccent  ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapDark2   ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapPaired  ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapPastel1 ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapPastel2 ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapSet1    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapSet2    ( int num_colors, int rgb_colormap[] );
+    COLORWRAPLIB_DLL_HANDLER int colorwrapSet3    ( int num_colors, int rgb_colormap[] );
 
 
 #ifdef __cplusplus
