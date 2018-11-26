@@ -79,6 +79,18 @@ extern "C"
     COLORWRAPLIB_DLL_HANDLER int colorwrapSet3    ( int num_colors, int rgb_colormap[] );
 
 
+    ///////////////////////////////////////////////////////////////
+    // Utility functions to proccess memory
+    // Note: the calee performs all memory management 
+    ///////////////////////////////////////////////////////////////
+
+    // Wraps call to malloc an int rgb_array[] given num_colors
+    COLORWRAPLIB_DLL_HANDLER int* colorwrapMemAlloc( int num_colors );
+    // Wraps call to free
+    COLORWRAPLIB_DLL_HANDLER void colorwrapMemFree( int rgb_colormap[] );
+
+
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
