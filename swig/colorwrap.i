@@ -9,6 +9,7 @@
 
 namespace std {
     %template(IntVector) vector<int>;
+    %template(FloatVector) vector<float>;
 }
 
 /* %include "../include/colorwrap.hpp" */
@@ -68,6 +69,14 @@ class Colorwrap
         static std::vector<int> Set1    ( std::size_t num_colors =  9 );
         static std::vector<int> Set2    ( std::size_t num_colors =  8 );
         static std::vector<int> Set3    ( std::size_t num_colors = 12 );
+
+
+        ///////////////////////////////////////////////////////////////
+        // Convert colormap to a vector of floats
+        ///////////////////////////////////////////////////////////////
+
+        static std::vector<float> asFloat( const std::vector<int> & );
+        static std::vector<float> asFloat( std::vector<int> && );
 
 
     protected:
