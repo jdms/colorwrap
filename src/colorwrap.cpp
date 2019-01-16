@@ -390,6 +390,28 @@ std::vector<int> Colorwrap::Set3( std::size_t num_colors)
 }
 
 
+///////////////////////////////////////////////////////////////
+// Convert colormap to a vector of floats
+///////////////////////////////////////////////////////////////
+
+std::vector<float> Colorwrap::asFloat( const std::vector<int> &input )
+{
+    auto output = std::vector<float>( input.size() );
+
+    for( size_t i = 0; i < input.size(); ++i )
+    {
+        output[i] = static_cast<float>(input[i])/255.0f;
+    }
+
+    return output;
+}
+
+std::vector<float> Colorwrap::asFloat( std::vector<int> &&input )
+{
+    return asFloat(input);
+}
+
+
 
 ///////////////////////////////////////////////////////////
 // Interpolate colours and perform other menial tasks

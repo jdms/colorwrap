@@ -79,6 +79,14 @@ class COLORWRAPLIB_DLL_HANDLER Colorwrap
         static std::vector<int> Set3    ( std::size_t num_colors = 12 );
 
 
+        ///////////////////////////////////////////////////////////////
+        // Convert colormap to a vector of floats
+        ///////////////////////////////////////////////////////////////
+
+        static std::vector<float> asFloat( const std::vector<int> & );
+        static std::vector<float> asFloat( std::vector<int> && );
+
+
     protected:
         static std::vector<int> get_cbrewer( std::string cmap_name, std::size_t min_colors, std::size_t max_colors, std::size_t num_colors );
         static std::vector<int> interpolate_color_list( const std::vector<std::string> &clist_hex_codes, size_t num_colors );

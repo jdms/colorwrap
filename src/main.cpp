@@ -17,7 +17,11 @@
 
 int main()
 {
-    auto my_colors = Colorwrap::Spectral();
+    auto my_colours_int    = Colorwrap::Spectral();
+
+    auto my_colours_float  = Colorwrap::asFloat(my_colours_int);
+
+    auto my_colours_float2 = Colorwrap::asFloat(Colorwrap::Spectral());
 
     return 0;
 }
