@@ -14,7 +14,7 @@
 
 
 ###############################################
-# Preliminaries  
+# Preamble  
 ###############################################
 
 cmake_minimum_required(VERSION 3.8.2 FATAL_ERROR)
@@ -22,10 +22,11 @@ cmake_minimum_required(VERSION 3.8.2 FATAL_ERROR)
 project(ColorWrap CXX)
 
 set(VERSION_MAJOR 0 CACHE STRING "Project major version number.")
-set(VERSION_MINOR 1 CACHE STRING "Project minor version number.")
+set(VERSION_MINOR 9 CACHE STRING "Project minor version number.")
 set(VERSION_PATCH 0 CACHE STRING "Project patch version number.")
 mark_as_advanced(VERSION_MAJOR VERSION_MINOR VERSION_PATCH)
 
+# For vim's YouCompleteMe plugin
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
@@ -57,13 +58,6 @@ option(COLORWRAP_BUILD_TESTS          "Build a test binary"                     
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-# Must use GNUInstallDirs to install libraries into correct
-# locations on all platforms.
-
-include(GNUInstallDirs)
-
-# Modify installation path in cmake generation step by setting var: 
-# CMAKE_INSTALL_PREFIX
 
 ###############################################
 # Configure lib (shared or static)
@@ -90,7 +84,7 @@ endif()
 ###############################################
 
 if (COLORWRAP_BUILD_DOCS)
-    include("${CMAKE_MODULE_PATH}/BuildDocumentation.cmake") 
+    include(BuildDocumentation) 
 endif(COLORWRAP_BUILD_DOCS)
 
 
@@ -196,6 +190,14 @@ endif()
 if(COLORWRAP_BUILD_SHARED)
     target_compile_options(colorwrap PUBLIC -DCOLORWRAP_BUILD_SHARED)
 endif()
+
+# Must use GNUInstallDirs to install libraries into correct
+# locations on all platforms.
+
+include(GNUInstallDirs)
+
+# Modify installation path in cmake generation step by setting var: 
+# CMAKE_INSTALL_PREFIX
 
 #set(INSTALL_DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/colorwrap)
 
