@@ -13,8 +13,7 @@
 /* limitations under the License. */
 
 
-#ifndef __COLORWRAP_C_H__
-#define __COLORWRAP_C_H__
+#pragma once
 
 
 #ifdef __cplusplus
@@ -81,6 +80,4 @@ extern "C"
 
 #ifdef __cplusplus
 } // extern "C"
-#endif
-
 #endif

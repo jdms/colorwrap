@@ -13,8 +13,8 @@
 /* limitations under the License. */
 
 
-#ifndef __COLORWRAP_HPP__
-#define __COLORWRAP_HPP__
+#pragma once
+
 
 #include <vector>
 #include <string>
@@ -95,5 +95,3 @@ class COLORWRAPLIB_DLL_HANDLER Colorwrap
         static std::vector<double> linspace(double min, double max, size_t steps);
         static std::vector<double> interpolate_coord( const std::vector<double> &x, const std::vector<double> &y, const std::vector<double> &x_new );
 };
-
-#endif
