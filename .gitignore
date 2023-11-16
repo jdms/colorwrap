@@ -5,6 +5,7 @@
 src/eigen3/
 *build/
 doc/html
+.cache
 
 
 ###################

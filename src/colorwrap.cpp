@@ -21,7 +21,6 @@
 
 #include "colorbrewer.h" 
 
-
 #if defined(COLORWRAP_INTERPOLATE_COLORS)
     // Use natural splines to interpolate colours in RGB space -- requires Eigen3
     #include "nspline.h"
@@ -48,6 +47,7 @@
 // Process colormaps
 ///////////////////////////////////////////////////////////
 
+namespace jdms {
 
 std::vector<int> Colorwrap::YlGn( std::size_t num_colors )
 {
@@ -582,3 +582,5 @@ void Colorwrap::getRGB( std::string hex_code, int &r, int &g, int &b )
             /* std::cout << "hex = (r, g, b) >>> " << hex_code << " = ("; */
             /* std::cout << r << ", " << g << ", " << b << ")\n" << std::flush; */
 }
+
+} // namespace jdms

@@ -17,7 +17,7 @@
 
 int main()
 {
-    using cw = Colorwrap;
+    using cw = jdms::Colorwrap;
 
     auto my_colours_int    = cw::Spectral();
     auto my_colours_float  = cw::asFloat(cw::Spectral());

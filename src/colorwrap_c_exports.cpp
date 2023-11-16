@@ -23,6 +23,8 @@
     // Sequential colormaps
     ///////////////////////////////////////////////////////////////
 
+using Colorwrap = jdms::Colorwrap;
+
 int colorwrapBlues   ( int num_colors, int colormap[] )
 {
     if ( num_colors < 1 )

@@ -14,6 +14,8 @@ namespace std {
 
 /* %include "../include/colorwrap.hpp" */
 
+namespace jdms {
+
 class Colorwrap
 {
     public:
@@ -88,3 +90,6 @@ class Colorwrap
         static std::vector<double> interpolate_coord( const std::vector<double> &x, const std::vector<double> &y, const std::vector<double> &x_new );
 };
 
+} // namespace jdms;
+
+using Colorwrap=jdms::Colorwrap;
